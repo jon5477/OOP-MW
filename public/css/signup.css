@@ -1,0 +1,26 @@
+#form-signup {
+	max-width:300px;
+	margin:10px auto;
+	padding:10px 20px;
+	background:lightblue;
+	border-radius:8px;
+}
+
+form h1 {
+	text-align:center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	width: 100%;
+	height:auto;
+	margin-bottom: 30px;
+}
+
+button {
+	padding: 19px 39px 19px 39px;
+	font-size:18px;
+	border-radius: 5px;
+	width: 100%;
+}
