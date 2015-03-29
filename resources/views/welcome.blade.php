@@ -1,46 +1,66 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
-
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
-
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
-
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
-
-			.title {
-				font-size: 96px;
-				margin-bottom: 40px;
-			}
-
-			.quote {
-				font-size: 24px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
-			</div>
+<head>
+	<title>Homepage</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<script src="file.js"></script>
+</head>
+<body>
+	<header>
+		<h1>CCFinder</h1>
+		<div id="header">
+			<ul class="main-nav">
+				<li class="dropdown">
+					<a href="/auth/login">Sign in</a>
+				</li>
+				<li><a href="/auth/register">Sign up</a></li>
+			</ul>	
+			
 		</div>
-	</body>
+	</header>
+
+	<div id="mainbody">
+		<div class="search">
+		<form name="search" action="index_submit" method="get" accept-charset="utf-8">
+				<ul>
+					<li>
+						<label for="searchcountry">Country:</label>
+						<input type="country" name="coutryname">
+					</li>
+					<li>
+						<input type="submit" value="search">
+					</li>
+				</ul> 
+		</form>	
+
+		<div id="countrylist">
+			<select name="credit_card" size="20">
+				<option value="Visa">America</option>
+				
+			</select>
+	    </div>
+	    <div id="citylist">
+			<select name="credit_card" size="20">
+				<option value="Visa">Seattle</option>
+				<option value="Mastercard">Boulder</option>
+				<option value="American Express">New York</option>
+				<option value="Visa">Denver</option>
+				<option value="Mastercard">Los Angles</option>
+				<option value="American Express">San Francisco</option>
+				<option value="Visa">San Diego</option>
+				
+			</select>
+			<input type="submit" value="search data">
+	    </div>
+
+    </div>
+
+
+	
+
+	
+
+</body>
 </html>
+
