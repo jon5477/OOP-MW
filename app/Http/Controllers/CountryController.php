@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+use Input;
 class CountryController extends Controller {
 
 	/*
@@ -16,7 +16,8 @@ class CountryController extends Controller {
 
 	public function searchByName()
 	{
-		return 'searchByName';
+		//return Input::all();
+		return Input::get("countryname");
 	}
 
 }
