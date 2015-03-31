@@ -7,6 +7,7 @@
 	<script src="file.js"></script>
 </head>
 <body>
+	@yield('content');
 	<header>
 		<h1>CCFinder</h1>
 		<div id="header">
