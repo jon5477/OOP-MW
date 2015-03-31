@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Location {
+class City extends Place {
 
 
 	/**
@@ -20,6 +20,8 @@ class City extends Location {
 	array_push(parrent::$fillable, 'cityId');
 
 
-
+	public function returnData(){
+		return this->data;
+	}
 
 }
