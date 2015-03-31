@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
+@extends('app')
+
+@section('content')
+
 <head>
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<script src="file.js"></script>
 </head>
-<body>
-	@yield('content');
 	<header>
 		<h1>CCFinder</h1>
 		<div id="header">
@@ -23,17 +23,17 @@
 
 	<div id="mainbody">
 		<div class="search">
-		<form name="search" action="index_submit" method="get" accept-charset="utf-8">
+		<form name="search" action="country/search" method="get" accept-charset="utf-8">
 				<ul>
 					<li>
 						<label for="searchcountry">Country:</label>
-						<input type="country" name="coutryname">
+						<input type="country" name="countryname">
 					</li>
 					<li>
 						<input type="submit" value="search">
 					</li>
 				</ul> 
-		</form>	
+		</form>
 
 		<div id="countrylist">
 			<select name="credit_card" size="20">
@@ -62,6 +62,4 @@
 
 	
 
-</body>
-</html>
-
+@endsection

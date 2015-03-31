@@ -15,14 +15,9 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::resource('registration', 'AuthController');
+Route::get('country/search', 'CountryController@searchByName');
 
-Route::get('/register', 'AuthController@create');
 
-/**
-* Authentication
-*
-*/
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
