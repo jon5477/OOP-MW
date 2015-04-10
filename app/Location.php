@@ -4,39 +4,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model {
 
-
-
-
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['longitued', 'latitude', 'population', 'name'];
+	protected $guarded = ['Id','longitude', 'latitude', 'population', 'name'];
 
-	public function getId(){
+	abstract public function getId();
 
-	}
+	abstract public function getLongitude();
 
-	public function getLongitude(){
+	abstract public function getLatitude();
 
-	}
+	abstract public function getPopulation();
 
-	public function getLatitude(){
+	abstract public function getName();
 
-	}
-
-	public function getPopulation(){
-
-	}
-
-	public function getName(){
-
-	}
-
-	public function returnData(){
-		
-	}
+	abstract public function returnData();
 
 
 }
