@@ -77,3 +77,15 @@ ul li {
 	margin-left:20px;
 	margin-top:10px;
 }
+
+.output-box {
+	width: 500px;
+	height:400px;
+	background-color:lightblue;
+	float:left;
+	margin-top:10px;
+}
+
+.save-button {
+	
+}

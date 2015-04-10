@@ -18,7 +18,7 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="http://localhost:8000/AuthenticatesAndRegistersUsers">
+					<form class="form-horizontal" role="form" method="POST" action="">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
