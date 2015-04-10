@@ -1,7 +1,4 @@
 
-@extends('app')
-
-@section('content')
 <?php 
 	use App\Services\APICall;
 	APICall::getCitiesByCountry();
