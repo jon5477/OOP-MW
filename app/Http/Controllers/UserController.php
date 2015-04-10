@@ -2,7 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User
+
+use App\User;
 
 use Illuminate\Http\Request;
 use Input;
@@ -25,7 +26,9 @@ class UserController extends Controller {
 	 */
 	public function create()
 	{
-		return Input::get("name");
+		$user=new User;
+		$user->name='john';
+		$user->save();
 	}
 
 	/**
