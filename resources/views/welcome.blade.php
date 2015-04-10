@@ -1,13 +1,13 @@
-@extends('app')
 
-@section('content')
-
+<html>
 <head>
+	
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<script src="file.js"></script>
 </head>
+<body>
 	<header>
 		<h1>CCFinder</h1>
 		<div id="header">
@@ -21,7 +21,9 @@
 		</div>
 	</header>
 
+
 	<div id="mainbody">
+
 		<div class="search">
 		<form name="search" action="country/search" method="get" accept-charset="utf-8">
 				<ul>
@@ -55,11 +57,20 @@
 			<input type="submit" value="search data">
 	    </div>
 
+	   
+
     </div>
 
+     <div class="output-box">
+		<p>Data of the country</p>
+
+	</div>
+
+</body>
+</html>
 
 	
 
 	
 
-@endsection
+
