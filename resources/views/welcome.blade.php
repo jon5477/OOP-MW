@@ -1,13 +1,20 @@
+
 @extends('app')
 
 @section('content')
-
+<?php 
+	use App\Services\APICall;
+	APICall::getCitiesByCountry();
+	//print_r(APICall::getCitiesByCountry());
+?>
 <head>
+	
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<script src="file.js"></script>
 </head>
+<body>
 	<header>
 		<h1>CCFinder</h1>
 		<div id="header">
@@ -21,7 +28,9 @@
 		</div>
 	</header>
 
+
 	<div id="mainbody">
+
 		<div class="search">
 		<form name="search" action="country/search" method="get" accept-charset="utf-8">
 				<ul>
@@ -37,7 +46,15 @@
 
 		<div id="countrylist">
 			<select name="credit_card" size="20">
-				<option value="Visa">America</option>
+				<?php 
+				$jsonData=APICall::getAllCountries();
+				//$i
+				foreach ($jsonData as $country) {?>
+				<option value="Visa"><?php print_r($country["name"]); ?></option>
+				<?php
+				}
+				?>
+				
 				
 			</select>
 	    </div>
@@ -53,13 +70,23 @@
 				
 			</select>
 			<input type="submit" value="search data">
+			
 	    </div>
+
+	   
 
     </div>
 
+     <div class="output-box">
+		<p>Data of the country</p>
+
+	</div>
+
+</body>
+</html>
 
 	
 
 	
 
-@endsection
+
