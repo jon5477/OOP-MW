@@ -1,11 +1,4 @@
-
-<?php 
-	use App\Services\APICall;
-	APICall::getCitiesByCountry();
-	//print_r(APICall::getCitiesByCountry());
-?>
 <head>
-	
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -42,31 +35,27 @@
 		</form>
 
 		<div id="countrylist">
-			<select name="credit_card" size="20">
-				<?php 
-				$jsonData=APICall::getAllCountries();
-				//$i
-				foreach ($jsonData as $country) {?>
-				<option value="Visa"><?php print_r($country["name"]); ?></option>
-				<?php
-				}
-				?>
-				
-				
+			<select name="country" size="20">
+				@foreach (\App\Services\APICall::getAllCountries() as $country)
+                    <option value="{{ $country["name"] }}" onclick="fetchCities(this.value)">{{ $country["name"] }}</option>
+				@endforeach
 			</select>
 	    </div>
 	    <div id="citylist">
-			<select name="credit_card" size="20">
-				<option value="Visa">Seattle</option>
+            {{-- Use AJAX to update city list when a country is selected. --}}
+
+				{{--<option value="Visa">Seattle</option>
 				<option value="Mastercard">Boulder</option>
 				<option value="American Express">New York</option>
 				<option value="Visa">Denver</option>
 				<option value="Mastercard">Los Angles</option>
 				<option value="American Express">San Francisco</option>
-				<option value="Visa">San Diego</option>
-				
-			</select>
-			<input type="submit" value="search data">
+				<option value="Visa">San Diego</option>--}}
+                {{--@foreach (\App\Services\APICall::getAllCountries() as $city)
+                    <option value="city">{{ $city["name"] }}</option>
+                @endforeach--}}
+
+			{{--<input type="submit" value="search data">--}}
 			
 	    </div>
 
@@ -78,12 +67,12 @@
 		<p>Data of the country</p>
 
 	</div>
-
+    </div>
 </body>
 </html>
 
-	
 
-	
+
+
 
 

@@ -17,6 +17,7 @@ Route::get('home', 'HomeController@index');
 
 Route::get('country/search', 'CountryController@searchByName');
 
+Route::get('city/search', 'CountryController@searchByCountry');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

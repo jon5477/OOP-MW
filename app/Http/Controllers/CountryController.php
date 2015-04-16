@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\View;
 use Input;
+use App\Services\APICall;
+
 class CountryController extends Controller {
 
 	/*
@@ -13,11 +17,9 @@ class CountryController extends Controller {
 	|
 	*/
 
-
-	public function searchByName()
-	{
-		//return Input::all();
-		return Input::get("countryname");
+	public function searchByCountry() {
+		$countryName = Input::get("country");
+        $list = APICall::getCitiesByCountry($countryName);
+        return View::make('citylist', array('citylist' => $list));
 	}
-
 }
