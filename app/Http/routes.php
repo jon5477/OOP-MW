@@ -19,6 +19,10 @@ Route::get('country/search', 'CountryController@searchByName');
 
 Route::get('city/search', 'CountryController@searchByCountry');
 
+Route::get('country/info', 'CountryController@displayCountry');
+
+Route::get('city/info', 'CountryController@displayCity');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

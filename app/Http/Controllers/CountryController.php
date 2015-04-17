@@ -22,4 +22,12 @@ class CountryController extends Controller {
         $list = APICall::getCitiesByCountry($countryName);
         return View::make('citylist', array('citylist' => $list));
 	}
+
+    public function displayCountry() {
+        return View::make('countryinfo');
+    }
+
+    public function displayCity() {
+        return View::make('cityinfo');
+    }
 }

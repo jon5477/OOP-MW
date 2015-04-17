@@ -1,5 +1,5 @@
 <select name="city" size="20">
 @foreach ($citylist as $city)
-    <option value="{{ $city }}">{{ $city }}</option>
+    <option value="{{ $city }}" onclick="fetchCityData(this.value)">{{ $city }}</option>
 @endforeach
 </select>

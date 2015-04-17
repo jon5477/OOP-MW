@@ -37,36 +37,15 @@
 		<div id="countrylist">
 			<select name="country" size="20">
 				@foreach (\App\Services\APICall::getAllCountries() as $country)
-                    <option value="{{ $country["name"] }}" onclick="fetchCities(this.value)">{{ $country["name"] }}</option>
+                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
 				@endforeach
 			</select>
 	    </div>
 	    <div id="citylist">
-            {{-- Use AJAX to update city list when a country is selected. --}}
-
-				{{--<option value="Visa">Seattle</option>
-				<option value="Mastercard">Boulder</option>
-				<option value="American Express">New York</option>
-				<option value="Visa">Denver</option>
-				<option value="Mastercard">Los Angles</option>
-				<option value="American Express">San Francisco</option>
-				<option value="Visa">San Diego</option>--}}
-                {{--@foreach (\App\Services\APICall::getAllCountries() as $city)
-                    <option value="city">{{ $city["name"] }}</option>
-                @endforeach--}}
-
-			{{--<input type="submit" value="search data">--}}
-			
 	    </div>
-
-	   
-
-    </div>
-
-     <div class="output-box">
-		<p>Data of the country</p>
-
-	</div>
+        </div>
+        <div id="output" class="output-box">
+	    </div>
     </div>
 </body>
 </html>
