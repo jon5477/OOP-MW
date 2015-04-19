@@ -41,7 +41,7 @@ class CountryController extends Controller {
             return View::make('ytdisplay', array('url' => $country->url));
         } catch (\Illuminate\Database\QueryException $e) {
             return View::make('noytdisplay', array('name' => $countryName));
-        } catch (PDOException $e) {
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return View::make('noytdisplay', array('name' => $countryName));
         }
     }
