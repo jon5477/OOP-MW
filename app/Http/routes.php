@@ -31,6 +31,8 @@ Route::get('city/info', 'CountryController@displayCity');
 
 Route::get('logout', 'UserController@destroy');
 
+Route::get('userpage','UserPageController@index');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
