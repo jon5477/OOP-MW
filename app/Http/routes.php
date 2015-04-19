@@ -13,6 +13,8 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('test', 'AController@index');
+
 Route::get('home', 'HomeController@index');
 
 Route::get('country/search', 'CountryController@searchByName');
