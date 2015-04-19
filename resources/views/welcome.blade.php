@@ -36,7 +36,7 @@
 		</form>
 
 		<div id="countrylist">
-			<select name="country" size="20">
+			<select id="countryselect" name="country" size="20">
 				@foreach (\App\Services\APICall::getAllCountries() as $country)
                     <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
 				@endforeach
@@ -45,9 +45,19 @@
 	    <div id="citylist">
 	    </div>
         </div>
-        <div id="output" class="output-box">
-	    </div>
-	    <div id="CountryVideo"></div>
+
+        <table border="1">
+            <tr>
+                <td><p onclick="displayInfo()">Info</p></td>
+                <td><p onclick="displayVideo()">YouTube Video</p></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="output" class="output-box">
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

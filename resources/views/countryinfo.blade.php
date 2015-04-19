@@ -1,32 +1,38 @@
-<html>
-	<body>
-		<?php
-		    print "-Country name: ".$info[0]['name']."<br>";
-			print "-Capital: ".$info[0]['capital']."<br>";
-			echo "-Spelling: "."<br>";
-			foreach ($info[0]['altSpellings'] as $spell){
-			 echo $spell, '<br />';
-			} 
-			echo "-Region: ".$info[0]['region']."<br>";
-			echo "-Population: ".$info[0]['population']."<br>";
-			echo "-Area: ".$info[0]['area']."<br>";
-			echo "-Borders: "."<br>";
-			foreach ($info[0]['borders'] as $border){
-			 echo $border."<br>";
-			}
-			echo "-Native name: ".$info[0]['nativeName']."<br>"; 
-			echo "-Top level domain: "."<br>";
-			foreach ($info[0]['topLevelDomain'] as $domain){
-			 echo $domain."<br>";
-			}
-			echo "-Currencies: "."<br>";
-			foreach ($info[0]['currencies'] as $curr){
-			 echo $curr."<br>";
-			} 
-			echo "-Language: "."<br>";
-			foreach ($info[0]['languages'] as $lan){
-			 echo $lan."<br>";
-			} 
-		?>
-	</body>	
-</html>
+<ul>
+    <li>Country name: {{ $info[0]['name'] }}</li>
+    <li>Capital: {{ $info[0]['capital'] }}</li>
+	<li>Spellings:</li>
+        <ul>
+            @foreach ($info[0]['altSpellings'] as $spell)
+                <li>{{ $spell }}</li>
+            @endforeach
+        </ul>
+    <li>Region: {{ $info[0]['region'] }}</li>
+    <li>Population: {{ $info[0]['population'] }}</li>
+    <li>Area: {{ $info[0]['area'] }}</li>
+    <li>Borders:</li>
+        <ul>
+            @foreach ($info[0]['borders'] as $border)
+                <li>{{ $border }}</li>
+            @endforeach
+        </ul>
+    <li>Native Name: {{ $info[0]['nativeName'] }}</li>
+    <li>Top Level Domain:</li>
+    <ul>
+        @foreach ($info[0]['topLevelDomain'] as $domain)
+            <li>{{ $domain }}</li>
+        @endforeach
+    </ul>
+    <li>Currencies:</li>
+    <ul>
+        @foreach ($info[0]['currencies'] as $curr)
+            <li>{{ $curr }}</li>
+        @endforeach
+    </ul>
+    <li>Languages:</li>
+    <ul>
+        @foreach ($info[0]['languages'] as $lang)
+            <li>{{ $lang }}</li>
+        @endforeach
+    </ul>
+</ul>

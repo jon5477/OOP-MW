@@ -26,7 +26,7 @@ class CountryController extends Controller {
     public function displayCountry() {
 		$countryName = Input::get("country");
 		$info = APICall::getCountriesInfo($countryName);
-		return View::make('countryinfo',array('info' => $info));
+		return View::make('countryinfo', array('info' => $info));
     }
 
     public function displayCity() {
