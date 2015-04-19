@@ -34,13 +34,14 @@
 		</form>
 
 		<div id="countrylist">
-			<select name="credit_card" size="20">
-				<option value="Visa">America</option>
-				
+			<select name="country" size="20">
+				@foreach (\App\Services\APICall::getAllCountries() as $country)
+                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
+				@endforeach
 			</select>
 	    </div>
 	    <div id="citylist">
-			<select name="credit_card" size="20">
+			<!--<select name="credit_card" size="20">
 				<option value="Visa">Seattle</option>
 				<option value="Mastercard">Boulder</option>
 				<option value="American Express">New York</option>
@@ -50,7 +51,7 @@
 				<option value="Visa">San Diego</option>
 				
 			</select>
-			<input type="submit" value="search data">
+			<input type="submit" value="search data">-->
 	    </div>
 
 	   
@@ -68,10 +69,16 @@
 
 	</div>
 	<input class="save-button" type="submit" value="save!">
-	<video widht="320" height="240"autoplay>
+	<!--<video widht="320" height="240"autoplay>
 		<source src="#" type="video/mp4">
 	YOur browser does not support the video tag	
-	</video>
+	</video>-->
+
+	<div id="datasave">
+		
+		
+	</div>
+	
 	
 
 
