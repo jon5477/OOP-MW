@@ -18,6 +18,12 @@
 		</div>
 	</div>
 </div> -->
+<head>
+	<title>Homepage</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<script src="file.js"></script>
+</head>
 <div id="mainbody">
 
 		<div class="search">
@@ -34,46 +40,23 @@
 		</form>
 
 		<div id="countrylist">
-			<select name="credit_card" size="20">
-				<option value="Visa">America</option>
-				
+			<select name="country" size="20">
+				@foreach (\App\Services\APICall::getAllCountries() as $country)
+                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
+				@endforeach
 			</select>
 	    </div>
 	    <div id="citylist">
-			<select name="credit_card" size="20">
-				<option value="Visa">Seattle</option>
-				<option value="Mastercard">Boulder</option>
-				<option value="American Express">New York</option>
-				<option value="Visa">Denver</option>
-				<option value="Mastercard">Los Angles</option>
-				<option value="American Express">San Francisco</option>
-				<option value="Visa">San Diego</option>
-				
-			</select>
-			<input type="submit" value="search data">
 	    </div>
-
-	   
-
+        </div>
+        <div id="output" class="output-box">
+	    </div>
     </div>
-
-    <!--<textarea name="textarea" rows="20" cols="50">
-	    	<p>Data of the city</p>
-
-
-
-	</textarea>-->
-	<div class="output-box">
-		<p>Data of the country</p>
-
-	</div>
-	<input class="save-button" type="submit" value="save!">
-	<video widht="320" height="240"autoplay>
-		<source src="#" type="video/mp4">
-	YOur browser does not support the video tag	
-	</video>
-	
+</body>
+</html>
 
 
 
-@stop
+
+
+
