@@ -15,9 +15,19 @@ class AController extends Controller {
 	 */
 	public function index()
 	{
-		$entry = Userdata::create(['sender'=> 'Phu','receiver' => 'Long','data'=>'VN']);
+		$entry = Userdata::create(['sender'=> 'Yang','receiver' => 'Long','data'=>'VN']);
 		$entry->save();
 		return "data is updated";
+	}
+
+	public function getSenders($receiver)
+	{
+		return Userdata::where('receiver', '=', $receiver)->lists('sender');
+	}
+
+	public function getDatas()
+	{
+		return Userdata::all();
 	}
 
 	/**
