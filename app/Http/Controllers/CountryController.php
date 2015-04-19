@@ -32,4 +32,5 @@ class CountryController extends Controller {
     public function displayCity() {
         return View::make('cityinfo');
     }
+
 }

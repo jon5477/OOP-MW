@@ -13,6 +13,12 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('test', 'AController@index');
+
+Route::get('test1/{receiver}', ['uses' => 'AController@getSenders']);
+
+Route::get('test2', 'AController@getDatas');
+
 Route::get('home', 'HomeController@index');
 
 Route::get('country/search', 'CountryController@searchByName');
