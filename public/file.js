@@ -2,6 +2,9 @@ function selectCountry(countryName) {
     fetchCities(countryName);
     fetchCountryData(countryName);
 }
+function selectVideo(countryName){
+    fetchCountryUrl(countryName);
+}
 
 function fetchCities(countryName) {
     var xmlhttp;
