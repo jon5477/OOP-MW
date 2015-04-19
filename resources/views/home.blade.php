@@ -47,6 +47,20 @@
 			</select>
 	    </div>
 	    <div id="citylist">
+<<<<<<< HEAD
+=======
+			<!--<select name="credit_card" size="20">
+				<option value="Visa">Seattle</option>
+				<option value="Mastercard">Boulder</option>
+				<option value="American Express">New York</option>
+				<option value="Visa">Denver</option>
+				<option value="Mastercard">Los Angles</option>
+				<option value="American Express">San Francisco</option>
+				<option value="Visa">San Diego</option>
+				
+			</select>
+			<input type="submit" value="search data">-->
+>>>>>>> cb38d08d5080c19dec9beba657cbf88dfb7f1cb7
 	    </div>
         </div>
         <div id="output" class="output-box">
@@ -58,5 +72,26 @@
 
 
 
+<<<<<<< HEAD
+=======
+	</textarea>-->
+	<div class="output-box">
+		<p>Data of the country</p>
+
+	</div>
+	<input class="save-button" type="submit" value="save!">
+	<!--<video widht="320" height="240"autoplay>
+		<source src="#" type="video/mp4">
+	YOur browser does not support the video tag	
+	</video>-->
+
+	<div id="datasave">
+		
+		
+	</div>
+	
+	
+
+>>>>>>> cb38d08d5080c19dec9beba657cbf88dfb7f1cb7
 
 
