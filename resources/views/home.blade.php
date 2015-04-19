@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layout')
 
 
 
@@ -18,7 +18,6 @@
 		</div>
 	</div>
 </div> -->
-
 <div id="mainbody">
 
 		<div class="search">
@@ -68,7 +67,13 @@
 		<p>Data of the country</p>
 
 	</div>
-
 	<input class="save-button" type="submit" value="save!">
+	<video widht="320" height="240"autoplay>
+		<source src="#" type="video/mp4">
+	YOur browser does not support the video tag	
+	</video>
+	
+
+
 
 @stop

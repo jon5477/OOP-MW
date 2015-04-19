@@ -27,4 +27,14 @@ class APICall{
         //Log::info(print_r($cities));
 		return $cities;
 	}
+	
+	public static function getCountriesInfo($countryName){
+		$countryName=preg_replace('/\s*/','',$countryName);
+		$countryName1=strtolower($countryName);
+		$countryInfoURL1='https://restcountries.eu/rest/v1/name/';
+		$request = $countryInfoURL1.$countryName1;
+		$json = file_get_contents($request);
+		$jsonData = json_decode($json,true);
+		return $jsonData;
+	}
 }
