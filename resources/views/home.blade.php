@@ -64,6 +64,7 @@
         </div>
         <div id="output" class="output-box">
 	    </div>
+	    <input class="save-button" type="submit" value="save">
     </div>
     <!--<video widht="320" height="240"autoplay>
 		<source src="#" type="video/mp4">
