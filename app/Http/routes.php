@@ -27,6 +27,8 @@ Route::get('city/search', 'CountryController@searchByCountry');
 
 Route::get('country/info', 'CountryController@displayCountry');
 
+Route::get('country/video', 'CountryController@displayVideo');
+
 Route::get('city/info', 'CountryController@displayCity');
 
 Route::get('logout', 'UserController@destroy');

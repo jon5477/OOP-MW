@@ -38,14 +38,16 @@
 					</li>
 				</ul> 
 		</form>
-
-		<div id="countrylist">
-			<select name="country" size="20">
-				@foreach (\App\Services\APICall::getAllCountries() as $country)
-                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
-				@endforeach
-			</select>
-	    </div>
+		<form name="saveCountry" action="country/save" method="post" accept-charset="utf-8">
+			<div id="countrylist">
+				<select name="country" size="20">
+					@foreach (\App\Services\APICall::getAllCountries() as $country)
+	                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
+					@endforeach
+				</select>
+				<input type="submit" value="save">
+		    </div>
+		</form>
 	    <div id="citylist">
 
 			<!--<select name="credit_card" size="20">
@@ -64,7 +66,7 @@
         </div>
         <div id="output" class="output-box">
 	    </div>
-	    <input class="save-button" type="submit" value="save">
+	    
     </div>
     <!--<video widht="320" height="240"autoplay>
 		<source src="#" type="video/mp4">

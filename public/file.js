@@ -21,6 +21,22 @@ function fetchCities(countryName) {
     xmlhttp.open("GET","/city/search/?country=" + countryName, true); // Route to the correct controller
     xmlhttp.send();
 }
+function fetchCountryUrl(countryName){
+    //alert(cityName);
+    var xmlhttp;
+    if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    } else {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            document.getElementById("output").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","/country/video/?country=" + countryName, true); // Route to the correct controller
+    xmlhttp.send();
+}
 
 function fetchCountryData(countryName) {
     //alert(cityName);
@@ -35,7 +51,7 @@ function fetchCountryData(countryName) {
             document.getElementById("output").innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","/country/info/?country=" + countryName, true); // Route to the correct controller
+    xmlhttp.open("GET","/country/video/?country=" + countryName, true); // Route to the correct controller
     xmlhttp.send();
 }
 
@@ -54,4 +70,8 @@ function fetchCityData(cityName) {
     }
     xmlhttp.open("GET","/city/info/?city=" + cityName, true); // Route to the correct controller
     xmlhttp.send();
+}
+
+function getSelectedValue(){
+    var e=document.getElementById("")
 }
