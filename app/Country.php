@@ -2,18 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Place {
-	protected $guarded = ['history'];
+class Country extends Model {
 
-	public function getHistory() {
-		return $this->history;
-	}
+	protected $fillable = ['url'];
 
-	public function returnData() {
-		// TODO
-	}
-
-	public function listCities() {
-		// TODO return a list of cities
-	}
 }
