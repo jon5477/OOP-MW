@@ -33,6 +33,8 @@ Route::get('city/info', 'CountryController@displayCity');
 
 Route::get('country/video', 'CountryController@displayVideo');
 
+Route::get('city/video', 'CountryController@displayCityVideo');
+
 Route::get('logout', 'UserController@destroy');
 
 Route::get('userpage','UserPageController@index');

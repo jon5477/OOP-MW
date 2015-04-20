@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\View;
 use App\Country;
+use App\City;
 use Input;
 use App\Services\APICall;
 
@@ -31,7 +32,9 @@ class CountryController extends Controller {
     }
 
     public function displayCity() {
-        return View::make('cityinfo');
+        $cityName = Input::get("city");
+
+        return View::make('cityinfo', array('name' => $cityName, 'info' => null));
     }
 
 
@@ -44,6 +47,18 @@ class CountryController extends Controller {
             return View::make('noytdisplay', array('name' => $countryName));
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return View::make('noytdisplay', array('name' => $countryName));
+        }
+    }
+
+    public function displayCityVideo() {
+        $cityName = Input::get("city");
+        try {
+            $city = City::findByName($cityName);
+            return View::make('ytdisplay', array('url' => $city->url));
+        } catch (\Illuminate\Database\QueryException $e) {
+            return View::make('noytdisplay', array('name' => $cityName));
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return View::make('noytdisplay', array('name' => $cityName));
         }
     }
 }
