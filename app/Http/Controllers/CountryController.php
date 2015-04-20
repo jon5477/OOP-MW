@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\View;
+use App\Country;
 use Input;
 use App\Services\APICall;
 
@@ -33,10 +34,16 @@ class CountryController extends Controller {
         return View::make('cityinfo');
     }
 
-    public function displayVideo(){
-    	$countryName=Input::get("country");
-    	$url=where('countryName', '=', $countryName)->lists('url');
-    	return View::make('CountryVideo', array('url' => $url));
-    }
 
+    public function displayVideo() {
+        $countryName = Input::get("country");
+        try {
+            $country = Country::findByName($countryName);
+            return View::make('ytdisplay', array('url' => $country->url));
+        } catch (\Illuminate\Database\QueryException $e) {
+            return View::make('noytdisplay', array('name' => $countryName));
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return View::make('noytdisplay', array('name' => $countryName));
+        }
+    }
 }

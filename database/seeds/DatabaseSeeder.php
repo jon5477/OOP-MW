@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use App\Country;
 
 class DatabaseSeeder extends Seeder {
     private static $allCountriesURL="https://restcountries.eu/rest/v1/all";
@@ -23,9 +24,6 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		// $this->call('UserTableSeeder');
-        for (self::getAllCountries() as $country) {
-            $country
-        }
 	}
 
 }

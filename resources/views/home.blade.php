@@ -38,16 +38,15 @@
 					</li>
 				</ul> 
 		</form>
-		<!--<form name="saveCountry" action="country/save" method="post" accept-charset="utf-8">-->
-			<div id="countrylist">
-				<select id="countryselect" name="country" size="20">
-					@foreach (\App\Services\APICall::getAllCountries() as $country)
-	                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
-					@endforeach
-				</select>
-				
-		    </div>
-		<!--</form>-->
+
+
+		<div id="countrylist">
+			<select id="countryselect" name="country" size="20">
+				@foreach (\App\Services\APICall::getAllCountries() as $country)
+                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
+				@endforeach
+			</select>
+	    </div>
 	    <div id="citylist">
 
 			<!--<select name="credit_card" size="20">
@@ -64,9 +63,20 @@
 
 	    </div>
         </div>
-        <div id="output" class="output-box">
-	    </div>
-	    
+
+        <table border="0">
+            <tr>
+                <td><p onclick="displayInfo()">Info</p></td>
+                <td><p onclick="displayVideo()">YouTube Video</p></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="output" class="output-box">
+                    </div>
+                </td>
+            </tr>
+        </table>
+	    <input class="save-button" type="submit" value="save">
     </div>
     <!--<video widht="320" height="240"autoplay>
 		<source src="#" type="video/mp4">
