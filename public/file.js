@@ -50,7 +50,7 @@ function fetchCountryData(countryName) {
             document.getElementById("output").innerHTML=xmlhttp.responseText;
         }
     }
-    xmlhttp.open("GET","/country/video/?country=" + countryName, true); // Route to the correct controller
+    xmlhttp.open("GET","/country/info/?country=" + countryName, true); // Route to the correct controller
     xmlhttp.send();
 }
 

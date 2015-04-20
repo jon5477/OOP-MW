@@ -33,8 +33,14 @@ class CountryController extends Controller {
 
     public function displayCity() {
         $cityName = Input::get("city");
-
-        return View::make('cityinfo', array('name' => $cityName, 'info' => null));
+        try {
+            $city = City::findByName($cityName);
+            return View::make('cityinfo', array('name' => $cityName, 'info' => null)); // what info do you want to return?
+        } catch (\Illuminate\Database\QueryException $e) {
+            return View::make('cityinfo', array('name' => $cityName, 'info' => null));
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return View::make('cityinfo', array('name' => $cityName, 'info' => null));
+        }
     }
 
 
