@@ -99,7 +99,7 @@ function displayVideo() {
     }
 }
 
-function getSelectedValue(userId){
+function getSelectedValue(){
     var e = document.getElementById("countryselect");
     if (e.selectedIndex >= 0) {
         var countryName = e.options[e.selectedIndex].value;
@@ -109,7 +109,13 @@ function getSelectedValue(userId){
         } else {// code for IE6, IE5
             xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlhttp.open("POST","/country/save/?country=" + countryName + "&userid=" +userId, true); // Route to the correct controller
+       /* xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                alert(xmlhttp.responseText);
+            }
+        }*/
+
+        xmlhttp.open("GET","/country/save/?country=" + countryName, true); // Route to the correct controller
         xmlhttp.send();
     }
 }

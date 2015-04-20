@@ -24,6 +24,7 @@ class UsersaveController extends Controller {
 		$user = Auth::user();
 		$entry = usersave::create(['userid'=> $user->id,'data' => $countryName]);
 		$entry->save();
+		//return view('userpage');
 	}
 
 

@@ -82,7 +82,7 @@
 		<source src="#" type="video/mp4">
 	YOur browser does not support the video tag	
 	</video>-->
-	<input type="submit" value="save" onclick="getSelectedValue("+{{}}+")">
+	<input type="submit" value="save" onclick="getSelectedValue()">
 </body>
 </html>
 

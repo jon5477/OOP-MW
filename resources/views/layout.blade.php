@@ -50,7 +50,6 @@
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/userpage">User</a></li>
             <li><a href="auth/logout">Logout</a></li>
-            <li></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
