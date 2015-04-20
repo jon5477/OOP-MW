@@ -34,9 +34,9 @@ class CountryController extends Controller {
     }
 
     public function displayVideo(){
-    	$countryName=Input::get(country);
+    	$countryName=Input::get("country");
     	$url=where('countryName', '=', $countryName)->lists('url');
     	return View::make('CountryVideo', array('url' => $url));
-;    }
+    }
 
 }

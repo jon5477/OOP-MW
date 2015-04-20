@@ -91,10 +91,25 @@ function displayVideo() {
         }
         xmlhttp.onreadystatechange=function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                document.getElementById("output").innerHTML=xmlhttp.responseText;
+                alert(xmlhttp.responseText);
             }
         }
         xmlhttp.open("GET","/country/video/?country=" + countryName, true); // Route to the correct controller
+        xmlhttp.send();
+    }
+}
+
+function getSelectedValue(userId){
+    var e = document.getElementById("countryselect");
+    if (e.selectedIndex >= 0) {
+        var countryName = e.options[e.selectedIndex].value;
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        } else {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("POST","/country/save/?country=" + countryName + "&userid=" +userId, true); // Route to the correct controller
         xmlhttp.send();
     }
 }

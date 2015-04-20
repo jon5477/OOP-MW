@@ -38,16 +38,16 @@
 					</li>
 				</ul> 
 		</form>
-		<form name="saveCountry" action="country/save" method="post" accept-charset="utf-8">
+		<!--<form name="saveCountry" action="country/save" method="post" accept-charset="utf-8">-->
 			<div id="countrylist">
-				<select name="country" size="20">
+				<select id="countryselect" name="country" size="20">
 					@foreach (\App\Services\APICall::getAllCountries() as $country)
 	                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
 					@endforeach
 				</select>
-				<input type="submit" value="save">
+				
 		    </div>
-		</form>
+		<!--</form>-->
 	    <div id="citylist">
 
 			<!--<select name="credit_card" size="20">
@@ -72,6 +72,7 @@
 		<source src="#" type="video/mp4">
 	YOur browser does not support the video tag	
 	</video>-->
+	<input type="submit" value="save" onclick="getSelectedValue("+{{}}+")">
 </body>
 </html>
 

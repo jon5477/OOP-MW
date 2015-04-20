@@ -35,6 +35,8 @@ Route::get('logout', 'UserController@destroy');
 
 Route::get('userpage','UserPageController@index');
 
+Route::post('country/save', 'UsersaveController@storeCountry');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
