@@ -123,7 +123,7 @@ function displayVideo() {
     }
 }
 
-function getSelectedValue(){
+function getSelectedCountry(){
     var e = document.getElementById("countryselect");
     if (e.selectedIndex >= 0) {
         var countryName = e.options[e.selectedIndex].value;
@@ -140,6 +140,27 @@ function getSelectedValue(){
         }*/
 
         xmlhttp.open("GET","/country/save/?country=" + countryName, true); // Route to the correct controller
+        xmlhttp.send();
+    }
+}
+
+function getSelectedCity(){
+    var e = document.getElementById("cityselect");
+    if (e.selectedIndex >= 0) {
+        var cityName = e.options[e.selectedIndex].value;
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        } else {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+       /* xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                alert(xmlhttp.responseText);
+            }
+        }*/
+
+        xmlhttp.open("GET","/city/save/?city=" + cityName, true); // Route to the correct controller
         xmlhttp.send();
     }
 }
