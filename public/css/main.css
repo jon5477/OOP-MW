@@ -71,12 +71,14 @@ ul li {
 	float:left;
 	margin-top:10px;
 	
+	
 }
 
 #citylist {
 	float:left;
 	margin-left:20px;
 	margin-top:10px;
+	margin-right: 20px;
 }
 
 .output-box {
@@ -108,8 +110,16 @@ body {
 }
 
 .save-country {
-	
 	display:block;
 	margin: 0;
 
+}
+
+.welcome {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#citydata {
+	margin-left: 20px;
 }

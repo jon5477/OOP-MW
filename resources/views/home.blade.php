@@ -47,6 +47,7 @@
 				@endforeach
 			</select>
 			<input class="save-country" type="submit" value="save country" onclick="getSelectedValue()">
+			<input class="save-city" type="submit" value="save city" onclick="getSelectedCity()">
 	    </div>
 	    <div id="citylist">
 
@@ -65,7 +66,7 @@
 	    </div>
         </div>
 
-        <table border="0">
+        <table border="1">
             <tr>
                 <td><p onclick="displayInfo()">Info</p></td>
                 <td><p onclick="displayVideo()">YouTube Video</p></td>
@@ -84,7 +85,7 @@
 	YOur browser does not support the video tag	
 	</video>-->
 
-	<input type="submit" value="save city" onclick="getSelectedCity()">
+	
 
 </body>
 </html>

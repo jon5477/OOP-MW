@@ -3,7 +3,7 @@
 @section('content')
 
 <head>
-	<p>welcome {!! $userid !!}</p>
+	<p class="welcome">welcome {!! $userid !!}</p>
 	
 </head>
 <table>
