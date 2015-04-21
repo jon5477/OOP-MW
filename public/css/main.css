@@ -70,6 +70,7 @@ ul li {
 #countrylist {
 	float:left;
 	margin-top:10px;
+	
 }
 
 #citylist {
@@ -104,4 +105,11 @@ body {
 	background-color: lightblue;
 	margin-top: 450px;
 	border-top: 2px solid black;
+}
+
+.save-country {
+	
+	display:block;
+	margin: 0;
+
 }

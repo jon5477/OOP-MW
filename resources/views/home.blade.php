@@ -46,6 +46,7 @@
                     <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
 				@endforeach
 			</select>
+			<input class="save-country" type="submit" value="save country" onclick="getSelectedValue()">
 	    </div>
 	    <div id="citylist">
 
@@ -76,13 +77,13 @@
                 </td>
             </tr>
         </table>
-	    <input class="save-button" type="submit" value="save">
+	    
     </div>
     <!--<video widht="320" height="240"autoplay>
 		<source src="#" type="video/mp4">
 	YOur browser does not support the video tag	
 	</video>-->
-	<input type="submit" value="save" onclick="getSelectedValue()">
+	<input class="save-button" type="submit" value="save city">
 </body>
 </html>
 
