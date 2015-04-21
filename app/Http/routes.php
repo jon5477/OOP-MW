@@ -41,6 +41,8 @@ Route::get('userpage','UserPageController@index');
 
 Route::get('country/save', 'UsersaveController@storeCountry');
 
+Route::get('city/save', 'UsersaveCityController@storeCity');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -82,7 +82,8 @@
 		<source src="#" type="video/mp4">
 	YOur browser does not support the video tag	
 	</video>-->
-	<input type="submit" value="save" onclick="getSelectedValue()">
+	<input type="submit" value="save city" onclick="getSelectedCity()">
+	<input type="submit" value="save country" onclick="getSelectedCountry()">
 </body>
 </html>
 
