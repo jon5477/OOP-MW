@@ -50,7 +50,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td width="40%"><input class="btn btn-secondary" type="submit" value="Save Country" onclick="getSelectedValue()"></td>
+                    <td width="40%"><input class="btn btn-secondary" type="submit" value="Save Country" onclick="getSelectedCountry()"></td>
                     <td><input class="btn btn-secondary" type="submit" value="Save City" onclick="getSelectedCity()"></td>
                 </tr>
             </table>
