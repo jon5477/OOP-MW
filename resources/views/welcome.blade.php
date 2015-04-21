@@ -67,11 +67,11 @@
 						<input type="country" name="countryname">
 					</li>
 					<li>
-						<input type="submit" value="search">
+						<input class="btn btn-primary" type="submit" value="search">
 					</li>
-				</ul> 
+				</ul>
 		</form>
-
+        <hr>
 		<div id="countrylist">
 			<select id="countryselect" name="country" size="20">
 				@foreach (\App\Services\APICall::getAllCountries() as $country)
@@ -83,10 +83,10 @@
 	    </div>
         </div>
 
-        <table border="1">
+        <table border="0">
             <tr>
-                <td><p onclick="displayInfo()">Info</p></td>
-                <td><p onclick="displayVideo()">YouTube Video</p></td>
+                <td width="10%"><button type="submit" class="btn btn-secondary" onclick="displayInfo()">Info</button></td>
+                <td><button type="submit" class="btn btn-secondary" onclick="displayVideo()">YouTube Video</button></td>
             </tr>
             <tr>
                 <td colspan="2">

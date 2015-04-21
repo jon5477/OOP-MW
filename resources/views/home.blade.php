@@ -25,7 +25,6 @@
 	<script src="file.js"></script>
 </head>
 <div id="mainbody">
-
 		<div class="search">
 		<form name="search" action="country/search" method="get" accept-charset="utf-8">
 				<ul>
@@ -34,20 +33,29 @@
 						<input type="country" name="countryname">
 					</li>
 					<li>
-						<input type="submit" value="search">
+						<input class="btn btn-primary" type="submit" value="Search">
 					</li>
 				</ul> 
 		</form>
-
-
+        <hr>
 		<div id="countrylist">
-			<select id="countryselect" name="country" size="20">
-				@foreach (\App\Services\APICall::getAllCountries() as $country)
-                    <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
-				@endforeach
-			</select>
-			<input class="save-country" type="submit" value="save country" onclick="getSelectedValue()">
-			<input class="save-city" type="submit" value="save city" onclick="getSelectedCity()">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <select id="countryselect" name="country" size="20">
+                            @foreach (\App\Services\APICall::getAllCountries() as $country)
+                                <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="40%"><input class="btn btn-secondary" type="submit" value="Save Country" onclick="getSelectedValue()"></td>
+                    <td><input class="btn btn-secondary" type="submit" value="Save City" onclick="getSelectedCity()"></td>
+                </tr>
+            </table>
+			{{-- <input class="save-country" type="submit" value="save country" onclick="getSelectedValue()">
+			<input class="save-city" type="submit" value="save city" onclick="getSelectedCity()"> --}}
 	    </div>
 	    <div id="citylist">
 
@@ -66,10 +74,10 @@
 	    </div>
         </div>
 
-        <table border="1">
+        <table border="0">
             <tr>
-                <td><p onclick="displayInfo()">Info</p></td>
-                <td><p onclick="displayVideo()">YouTube Video</p></td>
+                <td width="10%"><button type="submit" class="btn btn-secondary" onclick="displayInfo()">Info</button></td>
+                <td><button type="submit" class="btn btn-secondary" onclick="displayVideo()">YouTube Video</button></td>
             </tr>
             <tr>
                 <td colspan="2">
