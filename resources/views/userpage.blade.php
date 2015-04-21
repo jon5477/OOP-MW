@@ -1,33 +1,48 @@
 @extends('layout')
 
 @section('content')
-
 <head>
-	<p class="welcome">welcome {!! $userid !!}</p>
-	
+    <script src="file.js"></script>
 </head>
-<table>
+<p class="welcome">Welcome {{ $userid }}!</p>
+<table border="0">
+    <tr>
+        <th>Countries</th>
+        <th>Cities</th>
+    </tr>
 	<tr>
-		<th>
-			<div id="countrydata">
-				<select name="country" size="20">
+		<td>
+			<div id="countrylist">
+				<select id="countryselect" name="country" size="20">
 				@foreach ($data as $d)
-				<option value="{{ $d }}" onclick="fetchCountryData(this.value)">{{ $d	 }}</option>
+			    	<option value="{{ $d }}" onclick="fetchCountryData(this.value)">{{ $d }}</option>
 				@endforeach
 				</select>
 			</div>
-		</th>
-		<th>
+		</td>
+		<td>
 			<div id="citydata">
-				<select name="city" size="20">
+				<select id="cityselect" name="city" size="20">
 				@foreach ($data1 as $d1)
-				<option value="{{ $d1 }}" onclick="fetchCityData(this.value)">{{ $d1	 }}</option>
+		    		<option value="{{ $d1 }}" onclick="fetchCityData(this.value)">{{ $d1 }}</option>
 				@endforeach
 				</select>
-
 			</div>
-		</th>
+		</td>
+        <td>
+            <table border="0">
+                <tr>
+                    <td width="10%"><button type="submit" class="btn btn-secondary" onclick="displayInfo()">Info</button></td>
+                    <td><button type="submit" class="btn btn-secondary" onclick="displayVideo()">YouTube Video</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="output" class="output-box">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
 	</tr>
 </table>
-
-@stop
+@endsection
