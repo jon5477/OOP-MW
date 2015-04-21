@@ -18,7 +18,8 @@ class UserPageController extends Controller {
 	{
 		$user = Auth::user();
 		$data = Usersave::where('userid', '=', $user->id)->lists('data');
-		return view('userpage')->with(['userid' => $user->name,'data'=>$data]);
+		$data1 = Usersavecity::where('userid', '=', $user->id)->lists('data');
+		return view('userpage')->with(['userid' => $user->name,'data'=>$data,'data1' => $data1]);
 	}
 
 	/**
@@ -28,9 +29,7 @@ class UserPageController extends Controller {
 	 */
 	public function savecity()
 	{
-		$user = Auth::user();
-		$data = Usersavecity::where('userid', '=', $user->id)->lists('data');
-		return view('userpage')->with(['userid' => $user->name,'data'=>$data]);
+		
 	}
 
 	/**
