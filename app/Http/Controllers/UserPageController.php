@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\usersave;
+use App\usersavecity;
 class UserPageController extends Controller {
 
 	/**
@@ -16,7 +17,6 @@ class UserPageController extends Controller {
 	public function index()
 	{
 		$user = Auth::user();
-		
 		$data = Usersave::where('userid', '=', $user->id)->lists('data');
 		return view('userpage')->with(['userid' => $user->name,'data'=>$data]);
 	}
@@ -26,9 +26,11 @@ class UserPageController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function savecity()
 	{
-		//
+		$user = Auth::user();
+		$data = Usersavecity::where('userid', '=', $user->id)->lists('data');
+		return view('userpage')->with(['userid' => $user->name,'data'=>$data]);
 	}
 
 	/**
