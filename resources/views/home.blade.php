@@ -46,7 +46,7 @@
                     <option value="{{ $country["name"] }}" onclick="selectCountry(this.value)">{{ $country["name"] }}</option>
 				@endforeach
 			</select>
-			<input class="save-country" type="submit" value="save country" onclick="getSelectedValue()">
+			<input class="save-country" type="submit" value="save country" onclick="getSelectedCountry()">
 	    </div>
 	    <div id="citylist">
 
