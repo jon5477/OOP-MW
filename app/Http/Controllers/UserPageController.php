@@ -4,7 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use App\usersave;
 class UserPageController extends Controller {
 
 	/**
@@ -14,7 +15,10 @@ class UserPageController extends Controller {
 	 */
 	public function index()
 	{
-		return view('userpage');
+		$user = Auth::user();
+		
+		$data = Usersave::where('userid', '=', $user->id)->lists('data');
+		return view('userpage')->with(['userid' => $user->name,'data'=>$data]);
 	}
 
 	/**
