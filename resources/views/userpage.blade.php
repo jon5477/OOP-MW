@@ -11,15 +11,10 @@
         <th>Cities</th>
     </tr>
 	<tr>
-<<<<<<< HEAD
-		<th>
-			<div id="countrydata">
-				<select name="country" id="countryselect" size="20">
-=======
+
 		<td>
 			<div id="countrylist">
 				<select id="countryselect" name="country" size="20">
->>>>>>> e134d86de743157fe33adb5cb69000ece0520ea0
 				@foreach ($data as $d)
 			    	<option value="{{ $d }}" onclick="fetchCountryData(this.value)">{{ $d }}</option>
 				@endforeach
