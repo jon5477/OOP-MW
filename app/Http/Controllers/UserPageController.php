@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\usersave;
 use App\usersavecity;
+use App\userdata;
 class UserPageController extends Controller {
 
 	/**
@@ -19,7 +20,9 @@ class UserPageController extends Controller {
 		$user = Auth::user();
 		$data = Usersave::where('userid', '=', $user->id)->lists('data');
 		$data1 = Usersavecity::where('userid', '=', $user->id)->lists('data');
-		return view('userpage')->with(['userid' => $user->name,'data'=>$data,'data1' => $data1]);
+		$receiving_data  = Userdata::where('receiver' , '=', $user->name)->lists('sender','data');
+		
+		return view('userpage')->with(['userid' => $user->name,'data'=>$data,'data1' => $data1,'receiving_data' = $receiving_data]);
 	}
 
 	/**

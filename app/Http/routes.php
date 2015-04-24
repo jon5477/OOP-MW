@@ -15,7 +15,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('test', 'AController@index');
 
-Route::get('test1/{receiver}', ['uses' => 'AController@getSenders']);
+Route::get('test1/{[receiver,data]}', ['uses' => 'UserdataController@senddata']);
 
 Route::get('test2', 'AController@getDatas');
 
