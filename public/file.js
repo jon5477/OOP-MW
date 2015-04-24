@@ -164,3 +164,46 @@ function getSelectedCity(){
         xmlhttp.send();
     }
 }
+
+function sendUserName(){
+    var userName = document.getElementById("username").value;
+    var e = document.getElementById("cityselect");
+
+    if (e.selectedIndex >= 0) {
+        var placeName = e.options[e.selectedIndex].value;
+        var xmlhttp;
+        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        } else {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+       /* xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                alert(xmlhttp.responseText);
+            }
+        }*/
+
+        xmlhttp.open("GET","send/user/?username=" + userName+"&&placename=" +placeName, true); // Route to the correct controller
+        xmlhttp.send();
+    }
+    else{
+        e = document.getElementById("countryselect");
+        if (e.selectedIndex >= 0) {
+            var placeName = e.options[e.selectedIndex].value;
+            var xmlhttp;
+            if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            } else {// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+           /* xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    alert(xmlhttp.responseText);
+                }
+            }*/
+
+            xmlhttp.open("GET","send/user/?username=" + userName+"&&placename=" +placeName, true); // Route to the correct controller
+            xmlhttp.send();
+        }
+    }
+}

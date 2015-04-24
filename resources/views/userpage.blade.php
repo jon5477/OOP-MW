@@ -5,17 +5,15 @@
     <script src="file.js"></script>
 </head>
 <p class="welcome">Welcome {{ $userid }}!</p>
-<form name="send" action="country/send" method="get" accept-charset="utf-8">
-		<ul>
-			<li>
-				<label for="senddata">User name:</label>
-				<input type="country" name="countryname">
-			</li>
-			<li>
-				<input class="btn btn-primary" type="submit" value="Send">
-			</li>
-		</ul> 
-</form>
+<ul>
+	<li>
+		<label for="senddata">User name:</label>
+		<input type="user" name="username" id="username">
+	</li>
+	<li>
+		<input class="send-user" type="submit" value="Send" onclick="sendUserName()">
+	</li>
+</ul> 
 
 <hr></hr>
 

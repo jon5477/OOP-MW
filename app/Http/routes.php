@@ -43,6 +43,8 @@ Route::get('country/save', 'UsersaveController@storeCountry');
 
 Route::get('city/save', 'UsersaveCityController@storeCity');
 
+Route::get('send/user', 'UserdataController@senddata')
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
