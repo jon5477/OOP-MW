@@ -7,7 +7,7 @@
 <p class="welcome">Welcome {{ $userid }}!</p>
 <ul>
 	<li>
-		<label for="senddata">User name:</label>
+		<label for="senddata">Receiver:</label>
 		<input type="user" name="username" id="username">
 	</li>
 	<li>
