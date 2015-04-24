@@ -21,7 +21,7 @@ class UserPageController extends Controller {
 		$data = Usersave::where('userid', '=', $user->id)->lists('data');
 		$data1 = Usersavecity::where('userid', '=', $user->id)->lists('data');
 		$receiving_data  = Userdata::where('receiver' , '=', $user->name)->get(array('sender','data'));
-		
+		Userdata::where('receiver','=', $user->name)->delete();
 		return view('userpage')->with(['userid' => $user->name,'data'=>$data,'data1' => $data1,'receiving_data' => $receiving_data]);
 		//return $receiving_data;
 	}
