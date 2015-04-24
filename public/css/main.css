@@ -123,3 +123,12 @@ body {
 #citydata {
 	margin-left: 20px;
 }
+
+#send_data{
+
+	border-bottom: 2px solid grey;
+}
+
+#send_data form {
+	padding-bottom: 20px;
+}
