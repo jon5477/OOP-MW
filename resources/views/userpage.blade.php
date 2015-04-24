@@ -58,14 +58,12 @@
             </table>
         </td>
 
-        <td>
-			<div id="placerecomend">
-				<select id="placelist" name="place" size="20">
+        <td style="border:2px solid black">
+			<ul id="placerecomend">
 				@foreach ($receiving_data as $d)
-			    	<option>{{ $d['sender']}} suggested {{$d['data'] }}</option>
+			    	<li><font color="red">{{ $d['sender']}}</font> suggested <font color="blue">{{$d['data'] }}</font></li><br>
 				@endforeach
-				</select>
-			</div>
+			</ul>
 		</td>
 	</tr>
 </table>
