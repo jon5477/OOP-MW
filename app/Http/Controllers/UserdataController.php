@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\View;
 use Input;
 use App\Services\APICall;
 use Auth;
-use App\userdata;
+use App\Userdata;
 
 class UserdataController extends Controller {
 
@@ -19,9 +19,11 @@ class UserdataController extends Controller {
 	|
 	*/
 
-	public function senddata($receiver,$data) {
+	public function senddata() {
+		$userName = Input::get("username");
+		$placeName = Input::get("placename");
 		$user = Auth::user();
-		$entry = Userdata::create(['sender'=> $user->name,'receiver' => $receiver,'data'=>$data]);
+		$entry = Userdata::create(['sender'=> $user->name,'receiver' => $userName,'data'=>$placeName]);
 		$entry->save();
 		//return view('userpage');
 	}

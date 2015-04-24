@@ -57,6 +57,16 @@
                 </tr>
             </table>
         </td>
+
+        <td>
+			<div id="placerecomend">
+				<select id="placelist" name="place" size="20">
+				@foreach ($receiving_data as $d)
+			    	<option>{{ $d['sender']}} suggested {{$d['data'] }}</option>
+				@endforeach
+				</select>
+			</div>
+		</td>
 	</tr>
 </table>
 

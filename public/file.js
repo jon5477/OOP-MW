@@ -183,7 +183,7 @@ function sendUserName(){
             }
         }*/
 
-        xmlhttp.open("GET","send/user/?username=" + userName+"&&placename=" +placeName, true); // Route to the correct controller
+        xmlhttp.open("GET","send/user/?username=" + userName+"&placename=" +placeName, true); // Route to the correct controller
         xmlhttp.send();
     }
     else{
@@ -202,7 +202,7 @@ function sendUserName(){
                 }
             }*/
 
-            xmlhttp.open("GET","send/user/?username=" + userName+"&&placename=" +placeName, true); // Route to the correct controller
+            xmlhttp.open("GET","send/user/?username=" + userName+"&placename=" +placeName, true); // Route to the correct controller
             xmlhttp.send();
         }
     }
