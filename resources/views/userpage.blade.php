@@ -2,6 +2,7 @@
 
 @section('content')
 <head>
+	
     <script src="file.js"></script>
 </head>
 <p class="welcome">Welcome {{ $userid }}!</p>

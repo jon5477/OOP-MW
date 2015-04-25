@@ -19,6 +19,14 @@
 	</div>
 </div> -->
 <head>
+	<style>
+		body {
+			background-image: url("wall2.jpg");
+		}
+		label {
+			color: #000066;
+		}
+	</style>
 	<title>Homepage</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
