@@ -48,7 +48,12 @@ class CountryController extends Controller {
         $countryName = Input::get("country");
         try {
             $country = Country::findByName($countryName);
-            return View::make('ytdisplay', array('url' => $country->url));
+            if (strpos($country->url, 'watch') >= 0) {
+                $lochash = substr($country->url, strpos($country->url, "=") + 1);
+                return View::make('ytdisplay', array('url' => "https://www.youtube.com/embed/$lochash"));
+            } else {
+                return View::make('ytdisplay', array('url' => $country->url));
+            }
         } catch (\Illuminate\Database\QueryException $e) {
             return View::make('noytdisplay', array('name' => $countryName));
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
